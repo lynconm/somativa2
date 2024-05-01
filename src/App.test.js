@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import 'firebase/compat/auth'; 
 
 test('renders learn react link', () => {
   render(<App />);
