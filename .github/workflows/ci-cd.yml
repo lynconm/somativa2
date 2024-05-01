@@ -1,23 +1,18 @@
-name: CI/CD Pipeline
+name: Hello GitHub Actions
 
 on:
-  push:
-    branches:
-      - main
+    push:
+        branches: ["*"]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Build Project
-        run: npm run build
-
-      - name: Test Project
-        run: npm test
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: 16
+            - run: npm ci
+            - run: npm run test
+            - run: npm run build
+            - run: npm run deploy
