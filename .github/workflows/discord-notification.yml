@@ -11,5 +11,5 @@ jobs:
       - name: Send Discord notification
         uses: distributhor/webhook-action@v2
         with:
-          url: ${{ https://discord.com/api/webhooks/1235397882849267762/qbRGlEhNFCcnJjUxDzyPjrh4BgOAszWxppF117mBscuzRaQdhvHUmlFVMzvvqfhsyvCS}}
+          url:  https://discord.com/api/webhooks/1235397882849267762/qbRGlEhNFCcnJjUxDzyPjrh4BgOAszWxppF117mBscuzRaQdhvHUmlFVMzvvqfhsyvCS
           content: "Um novo Pull Request foi criado "
