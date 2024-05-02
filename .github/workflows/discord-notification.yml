@@ -1,0 +1,15 @@
+name: Discord Notification
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  send_discord_notification:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Discord notification
+        uses: distributhor/webhook-action@v2
+        with:
+          url: https://discord.com/api/webhooks/1235399473891643473/liNpV0d05-P0ugDhGOp9QcS7qczHAL-SqojOd19mdIx7mKNoAq6Ne237dtrRbzco_-uf
+          content: "Um novo Pull Request foi criado por ${{ lynconm }}. Confira em: ${{ github.event.pull_request.html_url }}"
